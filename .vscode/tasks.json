@@ -1,0 +1,91 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "编译 Win32 测试页面 (gui_test)",
+            "command": "C:/Users/admin/Downloads/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe",
+            "args": [
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-Isrc",
+                "-fexec-charset=GBK",
+                "-mwindows",
+                "src/test_ui/win32_test.c",
+                "src/module1_graph/graph.c",
+                "src/module2_scheduler/scheduler.c",
+                "src/module3_entity/entity.c",
+                "src/module4_charger/charger.c",
+                "src/module5_recommend/recommend.c",
+                "src/module6_simulation/simulation.c",
+                "src/module7_fileio/fileio.c",
+                "-lgdi32",
+                "-luser32",
+                "-lcomdlg32",
+                "-o",
+                "build/backend_test_gui.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "编译 Win32 后端测试页面（含全部后端模块 + GDI 库）"
+        },
+        {
+            "type": "cppbuild",
+            "label": "编译后端 Demo",
+            "command": "C:/Users/admin/Downloads/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe",
+            "args": [
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-Isrc",
+                "src/app/main.c",
+                "src/module1_graph/graph.c",
+                "src/module2_scheduler/scheduler.c",
+                "src/module3_entity/entity.c",
+                "src/module4_charger/charger.c",
+                "src/module5_recommend/recommend.c",
+                "src/module6_simulation/simulation.c",
+                "src/module7_fileio/fileio.c",
+                "-o",
+                "build/backend_demo.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "编译命令行后端演示程序"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe 生成活动文件（单文件）",
+            "command": "C:/Users/admin/Downloads/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/Users/admin/Downloads/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "仅编译当前打开的单个 .c 文件（不链接其他模块）"
+        }
+    ],
+    "version": "2.0.0"
+}
